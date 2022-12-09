@@ -4,7 +4,9 @@
   [ngClass]="isLoading ? 'faded' : ''"
 >
   <div class="user-information">
-    <div *ngIf="!gifData.user.display_name && !gifData.user.username">
+    <div
+      *ngIf="!gifData.user.display_name && !gifData.user.username && !isLoading"
+    >
       <i class="text-hover-pink">No user information found</i>
     </div>
     <div class="user-banner">
