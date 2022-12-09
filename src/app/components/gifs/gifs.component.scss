@@ -1,0 +1,59 @@
+.gifs-container {
+  color: white;
+  .title {
+    #keyword {
+      font-size: 40px;
+      margin: 10px 0 0 0;
+    }
+  }
+
+  .gif-list {
+    // Display in grid
+    display: grid;
+    grid-auto-rows: 0;
+
+    &.faded {
+      opacity: 0.1;
+    }
+
+    .gif-item {
+      position: relative;
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .image-container {
+        position: relative;
+        background: linear-gradient(to right, #bdc3c7, #2c3e50);
+        border-radius: 5px;
+
+        &:hover .name-overlay {
+          opacity: 0.8;
+        }
+
+        .name-overlay {
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          left: 0;
+          right: 0;
+          opacity: 0;
+          background-color: black;
+          color: white;
+          transition: all 500ms ease-in-out;
+          cursor: pointer;
+
+          #name {
+            position: absolute;
+            bottom: 0;
+            font-size: 18px;
+            margin: 0 5px 5px 5px;
+          }
+        }
+      }
+    }
+  }
+}

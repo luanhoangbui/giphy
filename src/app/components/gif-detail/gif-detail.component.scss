@@ -1,0 +1,79 @@
+.gif-detail-container {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin: 20px 0 20px 0;
+
+  .user-information {
+    padding: 20px 10px 20px 10px;
+
+    .user-banner {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 50px;
+        margin-right: 10px;
+      }
+
+      #name {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      #username {
+        font-size: 14px;
+        font-weight: 400;
+        color: #a6a6a6;
+      }
+    }
+    .user-description {
+      margin: 20px 0 20px 0;
+      width: 200px;
+
+      #description {
+        font-weight: 400;
+        color: #ababab;
+
+        &:hover {
+          color: chocolate;
+        }
+      }
+    }
+  }
+  .gif {
+    padding: 20px 10px 20px 10px;
+    width: 766px;
+
+    img {
+      width: 100%;
+    }
+
+    .gif-information {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      #gif-title {
+        font-size: 16px;
+        color: #a6a6a6;
+        font-weight: 500;
+        margin: 10px 0 10px 0;
+        &:hover {
+          color: aqua;
+        }
+      }
+
+      #gif-rating {
+        font-size: 18px;
+
+        i {
+          font-size: 15px;
+          &:hover {
+            color: coral;
+          }
+        }
+      }
+    }
+  }
+}

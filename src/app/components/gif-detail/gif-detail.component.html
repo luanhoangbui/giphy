@@ -1,0 +1,29 @@
+<div *ngIf="gifData" class="gif-detail-container">
+  <div class="user-information">
+    <div class="user-banner">
+      <img [src]="gifData.user.avatar_url || ''" />
+      <div>
+        <div id="name">{{ gifData.user.display_name }}</div>
+        <div *ngIf="gifData.user.username" id="username">
+          @{{ gifData.user.username }}
+        </div>
+      </div>
+      <div *ngIf="!gifData.user.display_name && !gifData.user.username">
+        <i class="text-hover-pink">No user information found</i>
+      </div>
+    </div>
+    <div class="user-description">
+      <div id="description">{{ gifData.user.description }}</div>
+    </div>
+  </div>
+  <div class="gif">
+    <img (load)="onLoaded()" #gifImage [src]="gifData.images.downsized.url" />
+    <div class="gif-information">
+      <div id="gif-title">{{ gifData.title }}</div>
+      <div id="gif-rating">
+        <i>Rating: {{ ratingMapping(gifData.rating) }}</i>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isLoading" class="loader"></div>
+</div>

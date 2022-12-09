@@ -1,0 +1,19 @@
+<div class="header-container">
+  <!-- LOGO -->
+  <div class="logo">
+    <a (click)="navigateToHomePage()">
+      <img src="../../../assets/images/logo.png" alt="GIPHY Logo" />
+    </a>
+  </div>
+  <!-- SEARCH BAR -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search all the GIFs"
+      [(ngModel)]="searchValue"
+    />
+    <div id="search-icon" (click)="onSearch()">
+      <img src="../../../assets/images/search-icon.svg" />
+    </div>
+  </div>
+</div>

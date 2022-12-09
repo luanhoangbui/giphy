@@ -1,0 +1,55 @@
+<div class="gifs-container">
+  <div class="title">
+    <h4 *ngIf="!searchValue">Trending GIFs</h4>
+    <h4 *ngIf="searchValue">
+      Found <span class="text-hover-pink">{{ resultNumber }}</span> GIFs for
+      <div id="keyword">{{ searchValue }}</div>
+    </h4>
+  </div>
+
+  <!-- LIST OF GIFs -->
+  <!-- Set grid property -->
+  <div
+    *ngIf="listOfGifs"
+    class="gif-list"
+    [ngStyle]="{
+      'grid-template-columns': 'repeat(auto-fill,' + columnWidth + 'px)',
+      'grid-gap': gridGap + 'px'
+    }"
+    [ngClass]="isLoading ? 'faded' : ''"
+  >
+    <!-- GIFs ITEM -->
+    <!-- Set grid item property after calculating -->
+    <div
+      class="gif-item"
+      *ngFor="let gif of listOfGifs"
+      [ngStyle]="{ 'grid-row-end': gif.rowSpan }"
+    >
+      <a [routerLink]="['/gifs', gif.id]">
+        <div
+          class="image-container"
+          [ngStyle]="{
+            height:
+              calcImageHeight(
+                gif.images.downsized.height,
+                gif.images.downsized.width
+              ) + 'px'
+          }"
+        >
+          <img [src]="gif.images.downsized.url" [alt]="gif.title" />
+          <div class="name-overlay">
+            <div id="name">
+              {{ gif.title }}
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- END OF LIST, USING FOR LAZY LOAD -->
+  <div (appObserveElement)="isIntersecting()"></div>
+</div>
+
+<!-- LOADING SPINNER -->
+<div *ngIf="isLoading" class="loader"></div>
