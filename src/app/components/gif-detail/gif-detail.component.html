@@ -1,5 +1,12 @@
-<div *ngIf="gifData" class="gif-detail-container">
+<div
+  *ngIf="gifData"
+  class="gif-detail-container"
+  [ngClass]="isLoading ? 'faded' : ''"
+>
   <div class="user-information">
+    <div *ngIf="!gifData.user.display_name && !gifData.user.username">
+      <i class="text-hover-pink">No user information found</i>
+    </div>
     <div class="user-banner">
       <img [src]="gifData.user.avatar_url || ''" />
       <div>
@@ -7,9 +14,6 @@
         <div *ngIf="gifData.user.username" id="username">
           @{{ gifData.user.username }}
         </div>
-      </div>
-      <div *ngIf="!gifData.user.display_name && !gifData.user.username">
-        <i class="text-hover-pink">No user information found</i>
       </div>
     </div>
     <div class="user-description">
@@ -25,5 +29,5 @@
       </div>
     </div>
   </div>
-  <div *ngIf="isLoading" class="loader"></div>
 </div>
+<div *ngIf="isLoading" class="loader"></div>

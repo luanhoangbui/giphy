@@ -4,6 +4,10 @@
   color: white;
   margin: 20px 0 20px 0;
 
+  &.faded {
+    opacity: 0.1;
+  }
+
   .user-information {
     padding: 20px 10px 20px 10px;
 
