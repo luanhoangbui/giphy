@@ -26,7 +26,7 @@ export class GifsComponent implements OnInit {
   gridGap = GridStyle.gridGap;
   pageSize = Paging.pageSize;
   currentOffset = -Paging.pageSize; 
-  resultNumber = 0; // total results count from APIs response
+  resultNumber = 1; // total results count from APIs response
 
   constructor(
       private giphyService: giphySerice,

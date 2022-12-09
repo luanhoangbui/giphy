@@ -47,7 +47,7 @@
   </div>
 
   <!-- END OF LIST, USING FOR LAZY LOAD -->
-  <div style="width: 100%; position: relative">
+  <div style="width: 100%; position: relative" *ngIf="resultNumber !== 0">
     <!-- LOADING SPINNER -->
     <div (appObserveElement)="isIntersecting()" class="loader bottom"></div>
   </div>
