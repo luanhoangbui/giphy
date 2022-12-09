@@ -11,6 +11,7 @@
       type="text"
       placeholder="Search all the GIFs"
       [(ngModel)]="searchValue"
+      (keydown.enter)="onSearch()"
     />
     <div id="search-icon" (click)="onSearch()">
       <img src="../../../assets/images/search-icon.svg" />

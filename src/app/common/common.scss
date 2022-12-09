@@ -11,6 +11,13 @@
   position: fixed;
   top: 43%;
   left: 47%;
+  &.bottom {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 460px;
+    top: 10px;
+  }
 }
 
 // Text pink when hover

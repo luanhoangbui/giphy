@@ -16,7 +16,6 @@
       'grid-template-columns': 'repeat(auto-fill,' + columnWidth + 'px)',
       'grid-gap': gridGap + 'px'
     }"
-    [ngClass]="isLoading ? 'faded' : ''"
   >
     <!-- GIFs ITEM -->
     <!-- Set grid item property after calculating -->
@@ -48,8 +47,8 @@
   </div>
 
   <!-- END OF LIST, USING FOR LAZY LOAD -->
-  <div (appObserveElement)="isIntersecting()"></div>
+  <div style="width: 100%; position: relative">
+    <!-- LOADING SPINNER -->
+    <div (appObserveElement)="isIntersecting()" class="loader bottom"></div>
+  </div>
 </div>
-
-<!-- LOADING SPINNER -->
-<div *ngIf="isLoading" class="loader"></div>
