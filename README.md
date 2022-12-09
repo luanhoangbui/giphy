@@ -53,3 +53,9 @@ or
 ```
 ng serve
 ```
+
+Open browser on
+
+```
+http://localhost:4200/
+```
